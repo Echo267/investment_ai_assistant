@@ -23,3 +23,7 @@ if uploaded_file:
         st.subheader("🧠 AI 分析建议 Prompt（可用于 DeepSeek）")
         prompt = generate_prompt(df, summary)
         st.text_area("📋 可复制粘贴使用的 Prompt", prompt, height=300)
+    else:
+        st.error("❌ 无法读取交易记录，请检查文件格式是否正确。")
+else:
+    st.info("💡 请上传你的投资交易记录表（Excel 格式），以便进行分析。")
